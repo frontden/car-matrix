@@ -1,0 +1,18 @@
+.app-select-car-dialog__content {
+
+  display: flex;
+  flex-direction: column;
+  border: 2px solid black;
+  margin: 0 10px;
+  padding: 20px;
+  min-width: 350px;
+}
+
+.app-select-car-dialog__option {
+  padding: 5px 0;
+  cursor: pointer;
+}
+
+.app-select-car-dialog__option:hover {
+  background-color: lightyellow;
+}

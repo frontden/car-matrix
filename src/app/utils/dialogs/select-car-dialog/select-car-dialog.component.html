@@ -1,0 +1,7 @@
+<h1 mat-dialog-title>Wich car do you want to inspect?</h1>
+<div mat-dialog-content class="app-select-car-dialog__content">
+  <div class="app-select-car-dialog__option" *ngFor="let car of cars" (click)="selectCar(car)">
+    {{car.category}}: {{car.title}}
+  </div>
+
+</div>

@@ -1,0 +1,85 @@
+<div class="app-matrix">
+
+  <div class="app-matrix__side-info">
+
+    <div class="app-matrix__side-info-title">
+          Impact
+    </div>
+
+    <div class="app-matrix__side-labels">
+      <div class="app-matrix__label">Critical</div>
+      <div class="app-matrix__label">Very high</div>
+      <div class="app-matrix__label">High</div>
+      <div class="app-matrix__label">Rather high</div>
+      <div class="app-matrix__label">Rather low</div>
+      <div class="app-matrix__label">Low</div>
+    </div>
+
+  </div>
+
+  <div class="app-matrix__table">
+
+    <ng-container *ngFor="let row of matrix">
+
+      <div class="app-matrix__row">
+
+        <app-matrix-cell
+                *ngFor="let cell of row.cells; let i = index"
+                [cars]="cell.cars"
+                [color]="cell.color"
+                [border]="i"
+                (showCarDetails)="showCarDetails($event)"></app-matrix-cell>
+
+
+      </div>
+
+    </ng-container>
+
+    <div class="app-matrix__bot-info">
+
+      <div class="app-matrix__bot-info-title">
+        Probability
+      </div>
+
+      <div class="app-matrix__bot-labels">
+        <div class="app-matrix__bot-label app-matrix__bot-label_left-bordered">Risk eliminated</div>
+        <div class="app-matrix__bot-label">Low</div>
+        <div class="app-matrix__bot-label">Rather low</div>
+        <div class="app-matrix__bot-label">Rather high</div>
+        <div class="app-matrix__bot-label">High</div>
+        <div class="app-matrix__bot-label">Very high</div>
+        <div class="app-matrix__bot-label">Critical</div>
+        <div class="app-matrix__bot-label app-matrix__bot-label_right-bordered">Occured</div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="app-matrix__car-details" *ngIf="selectedCar">
+
+    <div class="app-matrix__car-details-category app-matrix__car-details_titled">
+      {{selectedCar.category}}
+    </div>
+
+    <div class="app-matrix__car-details-title app-matrix__car-details_titled">
+      {{selectedCar.title}}
+    </div>
+
+    <div class="app-matrix__car-details-description">
+      <span class="app-matrix__car-details_titled">description:</span> <br>
+      {{selectedCar.description}}
+    </div>
+
+    <div class="app-matrix__car-details-stats">
+     <span class="app-matrix__car-details_titled">Impact: </span> {{selectedCar.impact | transformImpact}} <span class="app-matrix__car-details_titled">Probability:</span>  {{selectedCar.probability | transformProbability}}
+    </div>
+
+    <div class="app-matrix__car-details-impact">
+      Impact handling: <br>
+      {{selectedCar.impactHandling}}
+    </div>
+
+  </div>
+
+</div>

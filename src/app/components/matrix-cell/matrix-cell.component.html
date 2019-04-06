@@ -1,0 +1,23 @@
+<div class="app-matrix-cell" #cell>
+
+    <ng-container *ngIf="cars.length < 6">
+    <div class="app-matrix-cell__car-circle" *ngFor="let car of cars" (click)="chooseCar(car)"></div>
+    </ng-container>
+
+    <ng-container *ngIf="cars.length > 5">
+
+        <div class="app_matrix-cell_more-dotted">
+
+            <div class="app-matrix-cell__car-circle-wrap" (click)="selectCarFromDialog()">
+
+                <div class="app-matrix-cell__car-circle"></div>
+                <div class="app-matrix-cell__car-circle"></div>
+                <div class="app-matrix-cell__car-circle"></div>
+
+            </div>
+
+        </div>
+
+    </ng-container>
+
+</div>
