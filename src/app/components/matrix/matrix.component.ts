@@ -1,11 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import {ChangeDetectionStrategy, Component, OnInit, ViewEncapsulation} from '@angular/core';
+// models
 import {Car} from '../../models/car.model';
+// services
 import {CarService} from '../../services/car.service';
 
 @Component({
     selector: 'app-matrix',
     templateUrl: './matrix.component.html',
-    styleUrls: ['./matrix.component.scss']
+    styleUrls: ['./matrix.component.scss'],
+    encapsulation: ViewEncapsulation.None,
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    preserveWhitespaces: false
 })
 export class MatrixComponent implements OnInit {
 

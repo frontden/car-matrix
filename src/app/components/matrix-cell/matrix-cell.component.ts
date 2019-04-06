@@ -1,13 +1,20 @@
-import {Component, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
+import {ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output, ViewChild, ViewEncapsulation} from '@angular/core';
+// material
 import {MatDialog, MatDialogConfig} from '@angular/material';
+// models
 import {Car} from '../../models/car.model';
+// components
 import {SelectCarDialogComponent} from '../../utils/dialogs/select-car-dialog/select-car-dialog.component';
+// rxjs
 import {filter} from 'rxjs/operators';
 
 @Component({
     selector: 'app-matrix-cell',
     templateUrl: './matrix-cell.component.html',
     styleUrls: ['./matrix-cell.component.scss'],
+    encapsulation: ViewEncapsulation.None,
+    changeDetection: ChangeDetectionStrategy.OnPush,
+    preserveWhitespaces: false
 })
 export class MatrixCellComponent implements OnInit {
 
